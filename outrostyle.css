@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    color:white;
+    background-color: black;
+  }
+  
+  .navbar {
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  #resumo-profissional {
+    font-size: 1.2em;
+    margin-top: 1rem;
+  }
+  
+  .card {
+    margin: 0 auto;
+    max-width: 600px;
+  }
+  #educacao{
+    color:black;
+   
+  }
+  #experiencia-profissional{
+    text-align: left;
+    color:black;
+  }

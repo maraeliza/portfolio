@@ -3,6 +3,11 @@ body{
     color: white;
 
 }
+.navbar {
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+  }
+  
 .menu{
     width:100%;
     display: flex;   
@@ -52,4 +57,105 @@ h1{
     font-size: 20px;
     color:white;
 
+}
+.container a:hover{
+    text-decoration: underline;
+
+
+}
+
+.projects{
+    display: flex;
+    gap: 30px;
+    padding: 30px;
+    text-align: center;
+    width:80%;
+    margin:auto;
+}
+#projects h2{
+
+    margin-top: 100px;
+    text-align: center;
+}
+
+.project-item img{
+    filter: brightness(0.5);
+    width: 300px;
+    transition: 1s;
+
+}
+.project-item img:hover{
+    filter: brightness(1);
+    scale: 1.1;
+    box-shadow: 0px 0px 5px #fff;
+    
+}
+
+.project-item{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.project-item a{
+    color:white;
+    text-decoration: none;
+
+}
+.project-item p{
+    font-size: 20px;
+    margin-top: 30px;
+    width: 300px;
+}
+.aboutme{
+    background-color: #1616169c;
+
+    position:absolute;
+    
+    width: 50%;
+    align-items: center;
+    top:50%;
+    left:100px;
+    transform: translateY(-50%);
+}
+.aboutme h3, h4{
+    font-weight: 300 !important;
+    line-height: 30px !important;
+    
+    padding:10px;
+}
+.contacts{
+    background-color: rgba(0, 0, 0, 0.309);
+    width: 50%;
+    position:absolute;
+    align-items: center;
+    top:50%;
+    left:100px;
+    transform: translateY(-50%);
+}
+
+.contacts h3{
+    padding:20px;
+    color:white;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 20px;
+}
+.contacts h2{
+    font-size: 30px;
+
+    padding:20px;
+}
+.contacts a{
+    padding:20px;
+    color:white;
+    text-decoration: none;
+    font-weight: 400;
+    box-shadow: 0px 0px 5px #ffffff00;
+    transition: 0.5s;
+    width: 100%;
+    display: block;
+}
+.contacts a:hover{
+    box-shadow: 0px 0px 5px #ffffff48;
 }

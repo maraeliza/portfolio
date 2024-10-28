@@ -29,32 +29,46 @@
         <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
         <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
 
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="outrostyle.css">
        
         <!--Titulo-->
         <title>Portfólio</title>
     </head>
     <body>
-        <img src="fundo.jpg" class="fundo">
-        <div class="menu">
-            <div></div>
-            <div>
-                <a href="index.html">Home</a>
-                <a href="projetos.html">Projetos</a>
-                <a href="#">Sobre mim</a>
-                <a href="contatos.html">Contatos</a>                
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Mara Eliza</a>
+            <div class="collapse navbar-collapse">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="projetos.html">Projetos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Sobre mim</a></li>
+                <li class="nav-item"><a class="nav-link" href="contatos.html">Contatos</a></li>
+              </ul>
             </div>
+          </nav>
 
-        </div>
-
-        <div class="container">              
+        <div class="container mt-5">
+            <div class="text-center">
+           
+              <h1>Oi, sou a Mara Eliza!</h1>
+              <p id="resumo-profissional"></p>
             
-            <div>
-                <h3>Oi, sou a Mara Eliza e</h3>
-               
             </div>
-            <a href="sobremim.html">Ver meus projetos</a>
-        </div>
+        
+            <!-- Sessão de Educação -->
+            <section class="mt-5">
+              <h2>Vida Acadêmica</h2><br>
+              <div id="educacao"></div>
+            </section>
+        
+            <!-- Sessão de Experiência Profissional -->
+            <section class="mt-5">
+              <h2>Experiência Profissional</h2><br>
+              <div id="experiencia-profissional"></div>
+            </section>
+          </div>
+          
+        <script src="dados.js"></script>
         <script src="script.js"></script>
     </body>
 </html>
