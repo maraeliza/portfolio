@@ -1,0 +1,144 @@
+:root {
+  --dourado: #F0C14B;
+  --branco-puro: #FFFFFF;
+  --verde-pastel: #A8E6A1;
+  --azul-claro: #A0C4D7;
+  --azul-escuro: #1C3B57;
+  --azul-roupa:  rgb(54, 53, 113);
+  --azul-mao:#28f1f4;
+}
+
+
+
+.conteiner {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; 
+  flex-wrap: wrap;
+  padding-top: 30px;
+
+}
+
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; 
+  flex-wrap: wrap; 
+  width: 100%; 
+}
+
+/* Cada item de ícone */
+.icon-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: calc(23.33% - 7px);
+  
+  text-align: center;
+  padding: 20px;
+  transition: 0.5s ease;
+}
+.icon-item img {
+  width:120px;
+}
+
+.icon-item i, .icon-item img {
+  font-size: 150px; 
+  color: #333;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+
+.icon-item i:hover, .icon-item img:hover {
+  transform: scale(1.2);
+  color: var(--azul-escuro); 
+}
+
+/* Tema escuro */
+.conteiner.dark-theme i {
+  color: #ecf0f1;
+}
+
+/* Tema claro */
+.conteiner.light-theme i {
+  color: #2c3e50;
+}
+
+/* Efeitos adicionais */
+.icon-item i:nth-child(odd):hover {
+  transform: rotate(15deg);
+}
+
+.icon-item i:nth-child(even):hover {
+  transform: rotate(-15deg);
+}
+
+/* Efeitos adicionais */
+.icon-item img:nth-child(odd):hover {
+  transform: rotate(15deg);
+}
+
+.icon-item img:nth-child(even):hover {
+  transform: rotate(-15deg);
+}
+h3 {
+  font-size: 26px;
+  margin-top: 10px; /* Ajuste a distância do título para o ícone */
+  transition: 0.5s ease;
+}
+
+strong{
+ color: var(--azul-escuro);
+}
+h1{
+  color: #A8E6A1;
+}
+
+.habilidade{
+  display: flex;
+}
+
+.hiddenIcon {
+  opacity: 0;
+  filter: blur(5px);
+  transform: scale(0.5);
+  transition: all 0.5s;
+  color: var(--azul-escuro);
+}
+
+.showIcon {
+  opacity: 1;
+  filter: blur(0);
+  transform: scale(1);
+  color: var(--azul-escuro);
+}
+
+@media screen and (max-width: 700px) {
+
+
+  .icon-item i, .icon-item img {
+    font-size: 100px; 
+  }
+
+
+  .icon-item {
+    width: calc(50% - 10px); 
+  }
+
+  
+  .icon {
+    gap: 10px; 
+  }
+  
+  
+  .conteiner {
+    padding: 10px; 
+  }
+}

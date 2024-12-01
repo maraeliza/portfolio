@@ -1,0 +1,240 @@
+:root {
+    --dourado: #F0C14B;
+    --branco-puro: #FFFFFF;
+    --verde-pastel: #A8E6A1;
+    --azul-claro: #A0C4D7;
+    --azul-escuro: #1C3B57;
+    --azul-roupa:  rgb(54, 53, 113);
+    --azul-mao:#28f1f4;
+  }
+  
+
+
+nav {
+
+
+
+    display: flex;
+    align-items: center;
+    background-color:  #f9f6ef;
+    justify-content: space-between;
+    padding: 20px 80px;
+    height: 10vh;
+    box-shadow: 0 5px var(--azul-escuro);
+}
+
+
+/* Adicionando estilo para o nome */
+.logo{
+    display: flex;
+align-items: center;
+justify-content: center;
+gap: 5px;
+}
+.logo a {
+    color: #555;
+    font-size: 1.6rem; 
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.logo .oliveira {
+    color: #A8E6A1; 
+}
+
+.img-logo {
+    width: 50px;
+    height: 50px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+}
+
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #555;
+    transition: 0.5s ease;
+
+}
+
+
+#navbar li a:hover {
+    color: var(--verde-pastel);
+}
+
+nav li {
+    margin: 0;
+    
+  
+    transform: translateY(100%);
+  }
+
+  
+.efeito:after {    
+    background: none repeat scroll 0 0 transparent;
+    top: 30px;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #A8E6A1;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+  a:hover:after { 
+    width: 100%; 
+    left: 0; 
+  }
+
+.logo a:after {
+    content: none; 
+}
+
+  
+section .title span a::after {
+    content: "";
+    height: 2px;
+    background-color: #f7ca18;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 0;
+    animation: linkAfter 0.5s 1s ease both;
+  }
+  
+
+#mobile {
+    display: none;
+}
+
+#mobile i {
+    color: #1b1b1b;
+}
+.logo {
+    animation: none;
+}
+
+nav li:nth-child(1) {
+    animation: pop 0.5s 0.15s 1 forwards;
+  }
+  
+  nav li:nth-child(2) {
+    animation: pop 0.5s 0.3s 1 forwards;
+  }
+  
+  nav li:nth-child(3) {
+    animation: pop 0.5s 0.45s 1 forwards;
+  }
+  
+  nav li:nth-child(4) {
+    animation: pop 0.5s 0.6s 1 forwards;
+  }
+  
+  nav li:nth-child(5) {
+    animation: pop 0.5s 0.75s 1 forwards;
+  }
+  
+  nav li:nth-child(6) {
+    animation: pop 0.5s 0.9s 1 forwards;
+  }
+  
+  nav li:nth-child(7) {
+    animation: pop 0.5s 1.05s 1 forwards;
+  }
+  
+
+@media screen and (max-width: 915px) {
+
+
+  #navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: absolute; /* Posicionamento absoluto fora da tela */
+    top: 56px;
+    right: -370px; /* Inicialmente fora da tela */
+    width: 200px;
+    height: 28vh;
+    background-color: #f9f6ef;
+    padding: 40px 0 0 10px;
+    transition: 0.3s ease-in-out;
+    z-index: 2; /* Z-index para garantir que o menu apareça por cima do conteúdo */
+    border-radius: 0px 0px 0px 20px;
+}
+
+/* Quando o menu está ativo, ele se move para dentro da tela */
+#navbar.active {
+    right: 0;
+    transition: 0.3s ease-in-out;
+}
+
+/* Para o conteúdo da página não ser empurrado quando o menu não está visível, use flexbox */
+body {
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden; /* Evita overflow horizontal */
+}
+
+/* Estilo do ícone do menu (apenas visível em telas pequenas) */
+#mobile {
+    display: none;
+}
+
+#mobile i {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Responsividade para telas pequenas */
+@media screen and (max-width: 915px) {
+    /* Exibe o botão de menu em telas menores */
+    #mobile {
+        display: block;
+    }
+
+    /* Exibe o menu de navegação em uma coluna */
+    #navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top: 56px;
+        right: -370px;
+        width: 200px;
+        height: 270px;
+        background-color: #f9f6ef;
+        padding: 40px 0 0 10px;
+        transition: 0.3s ease-in-out;
+        z-index: 3;
+        border-radius: 0px 0px 0px 20px;
+        overflow-x: hidden;
+    }
+
+    /* Classe ativa */
+    #navbar.active {
+        right: 0;
+        top: none;
+        transition: 0.3s ease-in-out;
+    }
+
+    /* Ajuste para que o menu não empurre o conteúdo */
+    body {
+        overflow-x: hidden;
+    }
+}
+}

@@ -1,0 +1,390 @@
+:root {
+  --dourado: #f0c14b;
+  --branco-puro: #ffffff;
+  --verde-pastel: #a8e6a1;
+  --azul-claro: #a0c4d7;
+  --azul-escuro: #1c3b57;
+  --cinza-escuro: #1b1b1b;
+  --azul-roupa: rgb(54, 53, 113);
+  --azul-mao: #28f1f4;
+}
+
+.grid--container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-height: 80vh; /* Defina uma altura máxima, por exemplo, 80% da altura da tela */
+  overflow-y: auto; /* Ativa a rolagem vertical se o conteúdo exceder a altura máxima */
+}
+
+/* Célula do grid */
+.grid--cell {
+  background-color: #e7e3db;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.grid--cell:hover {
+  transform: translateY(-10px);
+}
+
+/* Preview Container (Imagem do card) */
+.preview--container {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+.preview-image {
+  width: 100%;
+  height: 100%;
+  background-color: #e7e3db; /* Cor inicial da imagem */
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease, background-color 0.5s ease, filter 0.5s ease;
+  position: relative;
+  transform: scale(1.05);
+}
+
+.medicavita {
+  background-image: url("../../assets/medicavita.png");
+}
+
+.smartdiet {
+  background-image: url("../../assets/smartdiet.png");
+}
+.evogym {
+  background-image: url("../../assets/evogym.png");
+}
+.modelofacil {
+  background-image: url("../../assets/modelofacil.png");
+}
+.preview-image--container {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #ddd;
+
+  background-size: cover; /* Faz com que a imagem preencha todo o container */
+  background-position: center; /* Garante que a imagem seja centralizada */
+  transform: scale(1.05);
+}
+
+/* Efeito de hover */
+.efeito::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  mix-blend-mode: color;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.efeito:hover::before {
+  opacity: 0;
+}
+
+.efeito:hover {
+  transform: scale(1);
+}
+
+/* Meta Container */
+.meta--container {
+  padding: 10px;
+  font-size: 14px;
+  color: #777;
+}
+
+.meta--container a {
+  color: #777;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+.meta--container a:hover {
+  color: #333;
+}
+
+/* Content Container */
+.content--container {
+  padding: 15px;
+  background-color: #e7e3db;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 190px;
+}
+
+/* Título */
+.title--container {
+  margin-bottom: 15px;
+}
+
+.title--text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+}
+
+.title--text:hover {
+  color: hsl(0, 1%, 36%);
+}
+
+.ellipsis {
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Hover Options */
+.hover--options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+  padding: 10px 25px;
+  border-radius: 15px;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #f2f2f2;
+}
+
+.icon-title {
+  margin-right: 5px;
+}
+
+/* Botões */
+.Repositório {
+  background-color: #f0f0f0;
+  border: 0.05rem solid color-mix(in oklab, currentColor, transparent 80%);
+}
+
+.Deploy {
+  background-color: #f0f0f0;
+  border: 0.05rem solid color-mix(in oklab, currentColor, transparent 80%);
+}
+
+.follow {
+  background-color: #f1f1f1;
+  border: 2px solid #ddd;
+  color: #333;
+  padding: 8px 8px 8px 4px;
+  border: 0.05rem solid color-mix(in oklab, currentColor, transparent 80%);
+}
+
+.follow:hover {
+  background-color: #e0e0e0;
+}
+
+.new-tab {
+  margin-left: 5px;
+}
+
+button i {
+  margin-left: 5px;
+}
+
+/* Container das tags */
+.tags--container {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  overflow: hidden; /* Esconde qualquer elemento fora da área visível */
+}
+
+/* Tag individual */
+.tag {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  color: #333;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.tag:hover {
+  background-color: hsl(0, 1%, 36%);
+}
+/* Tags */
+.tags--overflow-container {
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.tags--container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+/* Container do carrossel */
+.conteiner-slide {
+  width: 75vw; /* Largura do container */
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Estilo da faixa de slides que irá se mover */
+.paginas-slide {
+  display: inline-block;
+  animation: anime 15s linear infinite;
+}
+
+.paginas-slide span {
+  border: 0.05rem solid color-mix(in oklab, currentColor, transparent 80%);
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 500;
+  user-select: none;
+  padding-inline: 14px;
+  padding-bottom: 1px;
+  height: 32px;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-left: 5px;
+  color: #1b1b1b;
+}
+
+.tituProjetos {
+  display: flex;
+  justify-content: center;
+}
+/* Definindo a animação */
+@keyframes anime {
+  0% {
+    transform: translateX(0); /* Começa na posição inicial */
+  }
+  100% {
+    transform: translateX(
+      -50%
+    ); /* Move o conteúdo até a metade do seu tamanho */
+  }
+}
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.popup {
+  background-color: white;
+  padding: 60px 40px;
+  border-radius: 12px;
+  width: 400px;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: scale(0);
+  animation: popAnimation 0.3s forwards ease-out;
+  font-family: "Arial", sans-serif;
+}
+
+.popup h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  letter-spacing: 1px;
+}
+
+.popup p {
+  font-size: 16px; /* Tamanho confortável para leitura */
+  line-height: 1.6; /* Melhorando a legibilidade do texto */
+  color: #555; /* Cor mais suave para o corpo do texto */
+  margin-bottom: 20px; /* Espaçamento entre o texto e o botão */
+}
+
+.popup .close-popup {
+  background-color: var(--verde-pastel); /* Cor do botão mais clara */
+  color: white;
+  border: none;
+  padding: 12px 24px; /* Mais espaçamento no botão */
+  cursor: pointer;
+  border-radius: 6px; /* Bordas mais arredondadas */
+  font-size: 16px; /* Aumentando o tamanho da fonte no botão */
+  transition: background-color 0.3s ease; /* Transição suave para mudança de cor */
+}
+
+.popup .close-popup:hover {
+  background-color: var(--verde-pastel); /* Cor mais escura ao passar o mouse */
+}
+
+.popup .close-popup:focus {
+  outline: none; /* Remove o contorno padrão do foco */
+}
+
+/* Animação de "pop" */
+@keyframes popAnimation {
+  0% {
+    transform: scale(0); /* Começa pequeno */
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1); /* Termina no tamanho original */
+    opacity: 1;
+  }
+}
+
+/* Animação de fade-in para o overlay */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+  .grid--container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .grid--container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hiddenCards {
+  opacity: 0;
+  filter: blur(5px);
+  transform: scale(1) translateY(50px);
+  transition: all 0.5s ease-in-out;
+  color: var(--azul-escuro);
+}
+
+.showCards {
+  opacity: 1;
+  filter: blur(0);
+  transform: scale(1) translateY(0);
+  color: var(--azul-escuro);
+}
+.geralProjetos {
+  height: 100vh;
+  padding-top: 50px;
+}

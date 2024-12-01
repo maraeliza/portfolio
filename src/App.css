@@ -1,0 +1,17 @@
+:root {
+
+  --dourado: #F0C14B;
+  --branco-puro: #FFFFFF;
+  --verde-pastel: #A8E6A1;
+  --azul-claro: #A0C4D7;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+
+    color: #fff;
+
+background-color: #f9f6ef;
+}
+

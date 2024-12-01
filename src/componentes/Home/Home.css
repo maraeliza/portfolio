@@ -1,0 +1,238 @@
+:root {
+  --dourado: #F0C14B;
+  --branco-puro: #FFFFFF;
+  --verde-pastel: #A8E6A1;
+  --azul-claro: #A0C4D7;
+  --azul-escuro: #1C3B57;
+  --cinza-escuro: #1b1b1b;
+  --azul-roupa:  rgb(54, 53, 113);
+  --azul-mao:#28f1f4;
+}
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+::selection {
+  background-color: #A8E6A1;
+  color: #1b1b1b;
+}
+ 
+section {
+  background-color: #1b1b1b;
+  min-height: 90vh;
+  display: flex;
+}
+
+section .title {
+  max-width: 60%;
+  width: 100%;
+  align-self: center;
+  transform: translateY(-50px);
+  margin: 0 auto;
+  overflow: hidden;
+  padding-bottom: 10px;
+}
+
+section .title span {
+  display: inline-block;
+  font-size: 5vw;
+  color: #efefef;
+  width: 100%;
+  text-transform: uppercase;
+  transform: translateX(-100%);
+  animation: byBottom 1s ease both;
+  font-weight: 600;
+  letter-spacing: 0.25vw;
+}
+
+section .title span:last-child {
+  font-size: 1rem;
+  animation: byBottom 1s 0.25s ease both;
+}
+
+section .title span a {
+  position: relative;
+  display: inline-block;
+  margin-left: 0.5rem;
+  text-decoration: none;
+  color: #A8E6A1;
+}
+
+section .title span a::after {
+  content: "";
+  height: 2px;
+  background-color: #A8E6A1;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 0;
+  animation: linkAfter 0.5s 1s ease both;
+}
+
+
+
+
+@keyframes pop {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes byBottom {
+  0% {
+    transform: translateY(150%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes linkAfter {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 30px;
+  }
+}
+
+
+.social-icons {
+  display: flex;
+  position: absolute;
+  top: 86%;
+  left: -5%;
+ 
+  justify-content: center;
+width: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.social-icons li {
+  list-style: none;
+}
+
+.social-icons li a {
+  width: 50px;
+  height: 50px;
+  background-color: #f9f6ef;
+  text-align: center;
+  line-height: 45px;
+  font-size: 20px;
+  margin: 0 10px;
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid ;
+  z-index: 1;
+}
+.social-icons li a .social-icon {
+  position: relative;
+  color: #262626;
+  transition: .5s;
+  z-index: 3;
+}
+
+.social-icons li a:hover .social-icon {
+  color: #f9f6ef;
+  transform: rotateY(360deg);
+}
+
+.social-icons li a:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f00;
+  transition: .5s;
+  z-index: 2;
+}
+
+.social-icons li a:hover:before {
+  top: 0;
+}
+
+.social-icons li:nth-child(1) a:before{
+  background: #0077b5;
+}
+
+.social-icons li:nth-child(2) a:before{
+  background: #171515;
+}
+
+.social-icons li:nth-child(3) a:before {
+  background:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+}
+
+
+.hiddenSocial {
+  opacity: 0;
+  filter: blur(5px);
+  transform: scale(1) translateY(50px) ; 
+  transition: all 0.5s ease-in-out;
+ 
+}
+
+.showSocial {
+  opacity: 1;
+  filter: blur(0);
+  transform: scale(1) translateY(0) ; 
+ 
+}
+
+
+.botao-transparente {
+  background: transparent;
+  color: #fff;
+  border: 2px solid transparent;
+  padding: 13px 20px;
+  font-size: 15px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px;
+  transition: color 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+.botao-transparente::before {
+  content: ""; /* Cria um pseudo-elemento */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f9f6ef; /* Cor fosca, ajustável */
+  opacity: 0; /* Inicialmente invisível */
+  transition: opacity 0.3s ease; /* Transição suave para a opacidade */
+  z-index: -1; /* Coloca o pseudo-elemento abaixo do texto */
+  border-radius: 12px; /* Arredondamento da borda do fundo */
+}
+
+.botao-transparente:hover {
+  color: #333;
+  background: #f9f6ef; /* Cor de fundo fosca ao passar o mouse */
+}
+
+.botao-transparente:hover::before {
+  opacity: 0.5; /* Torna o fundo visível com efeito fosco */
+}
