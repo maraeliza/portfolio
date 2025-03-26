@@ -1,5 +1,5 @@
 {
-  "homepage":"https://maraeliza.github.io/portfolio ",
+  "homepage": "https://maraeliza.github.io/portfolio ",
   "name": "portfolio",
   "private": true,
   "version": "0.0.0",
@@ -9,13 +9,14 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-     "predeploy":"npm run build",
-    "deploy":"gh-pages -d dist"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
     "axios": "^1.7.7",
+    "gh-pages": "^6.3.0",
     "portfolio": "file:",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

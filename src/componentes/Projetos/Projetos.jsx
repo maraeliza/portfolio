@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import "./Projetos.css";
 
@@ -6,13 +6,6 @@ function Projetos() {
   const [popupVisible, setPopupVisible] = useState(false);
 
   const [popupDescription, setPopupDescription] = useState("");
-
-  const descricoes = {
-    1: "Este projeto consiste no desenvolvimento de uma landing page simples e funcional para uma academia, utilizando React. O objetivo é criar uma página leve, rápida e fácil de navegar, com foco em promover a academia e facilitar o contato com os clientes.",
-    2: "Este projeto consiste no desenvolvimento de uma landing page moderna e funcional para a clínica MedicaVita, utilizando React, TypeScript e configurado com Vite para garantir alta performance e carregamento rápido. O objetivo é criar uma página leve, segura e intuitiva, focada em apresentar os serviços da clínica, transmitir confiança aos pacientes e facilitar o agendamento de consultas. A interface é projetada para oferecer uma experiência agradável e responsiva, destacando as especialidades médicas, a equipe de profissionais e as informações de contato, reforçando o compromisso com a saúde e bem-estar dos pacientes.",
-    3: "Este projeto é um sistema de gestão médica desenvolvido em Java com Spring Boot, focado no gerenciamento de pacientes, médicos, agendamentos e prontuários. A aplicação oferece uma interface intuitiva, permitindo o cadastro, consulta e atualização de informações médicas de forma segura e eficiente, otimizando os processos clínicos e melhorando a experiência tanto para profissionais de saúde quanto para os pacientes.",
-    4: "Este projeto é um sistema de gestão de eventos de casamento desenvolvido em Java com MySQL e JDBC. Ele permite gerenciar fornecedores, convidados, cronograma e orçamento, oferecendo uma solução eficiente e automatizada para organizar todos os detalhes do evento, garantindo praticidade e segurança no planejamento.",
-  };
 
   const listaProjetos = [
     {
@@ -50,6 +43,15 @@ function Projetos() {
         "O site ModeloFacil serve para facilitar o envio de emails dentro de uma empresa. Ele permite a utilização de templates customizados e inserção de dados para a construção dos emails",
       
       habilidades: ["Python","Flask", "FirebaseNoSQL","jQuery", "JavaScript", "Bootstrap", "HTML", "CSS"],
+    },
+    {
+      linkRepositorio: "",
+      linkDeploy: "https://ecomerce-homolog.cartaocbx.com.br/",
+      nome: "CBXPremium",
+      descricao:
+        "O site CBX Premium é um site voltado os para serviços e benefícios do Cartão CBX para os servidores públicos.",
+      
+      habilidades: ["React", "TypeScript", "Next.js", "Tanstack Query"],
     }
   ];
 
@@ -57,9 +59,9 @@ function Projetos() {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("showCards"); // Adiciona a classe 'show' quando visível
+          entry.target.classList.add("showCards"); 
         } else {
-          entry.target.classList.remove("showCards"); // Remove a classe 'show' quando não visível
+          entry.target.classList.remove("showCards"); 
         }
       });
     });
@@ -68,9 +70,9 @@ function Projetos() {
     hiddenElements.forEach((el) => observer.observe(el));
   }, []);
 
-  const togglePopup = (index,id) => {
-    setPopupDescription(listaProjetos[index].descricao); // Atribui a descrição do projeto ao estado
-    setPopupVisible(!popupVisible); // Alterna a visibilidade do popup
+  const togglePopup = (index) => {
+    setPopupDescription(listaProjetos[index].descricao); 
+    setPopupVisible(!popupVisible); 
   };
 
   return (
@@ -99,7 +101,7 @@ function Projetos() {
                 <div className="title--container">
                   <a
                     className="title--text"
-                    href="https://maraeliza.github.io/evogym/"
+                    href={projeto.linkDeploy}
                   >
                     Projeto - {projeto.nome}
                   </a>
@@ -119,6 +121,8 @@ function Projetos() {
                 </div>
 
                 <div className="hover--options">
+                  {projeto.linkRepositorio.length > 2 && (
+
                   <a
                     href={projeto.linkRepositorio}
                     className="Repositório button"
@@ -130,6 +134,7 @@ function Projetos() {
                       <i className="fas fa-arrow-circle-right"></i>
                     </span>
                   </a>
+                  )}
 
                   <a href={projeto.linkDeploy} className="Deploybutton">
                     <span className="icon-title">
